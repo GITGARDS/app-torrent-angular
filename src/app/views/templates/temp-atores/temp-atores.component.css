@@ -1,0 +1,26 @@
+ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  margin-right: 5px;
+}
+
+li .objeto {
+  display: flex;
+}
+
+.campo {
+  display: flex;
+  font-size: 15px;
+  gap: 5px;
+}
+
+.campo label {
+  font-weight: bold;
+  text-transform: capitalize;
+}

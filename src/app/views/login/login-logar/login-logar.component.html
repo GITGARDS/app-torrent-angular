@@ -1,0 +1,48 @@
+<main>
+  <div class="conteudo">
+    <section class="imagem">
+      <i class="bi bi-person-circle"></i>
+    </section>
+
+    <section class="titulo">
+      <app-temp-titulo texto="Login"></app-temp-titulo>
+    </section>
+
+    <section class="inputs">
+      <input
+        [(ngModel)]="usuario.email"
+        class="iemail form-control"
+        type="text"
+        id="email"
+        name="email"
+        placeholder="email"
+      />
+      <input
+        [(ngModel)]="usuario.senha"
+        class="isenha form-control"
+        type="password"
+        id="senha"
+        name="senha"
+        placeholder="senha"
+      />
+    </section>
+
+    <section class="botoes">
+      <button
+        [disabled]="loading"
+        (click)="login(usuario)"
+        class="btn btn-primary"
+      >
+        <span
+          *ngIf="loading"
+          class="spinner-border spinner-border-sm mr-1"
+        ></span>
+        Entrar
+      </button>
+
+      <button (click)="registrar()" class="btn btn-success">
+        Registrar-se
+      </button>
+    </section>
+  </div>
+</main>

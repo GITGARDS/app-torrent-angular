@@ -1,0 +1,50 @@
+main {
+  min-height: var(--main-h);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.filme_novo {
+  height: 360x;
+  width: 240px;
+  display: flex;
+}
+
+.filme_novo button {
+  width: 100%;
+  font-size: 40px;
+  border-radius: 0;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 10px 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+.card-filme {
+  /* width: 190px;
+  overflow: hidden; */
+}
+
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

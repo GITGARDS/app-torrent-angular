@@ -1,0 +1,146 @@
+<main class="container-fluid">
+  <div class="card">
+    <section class="d-flex gap-1">
+      <app-temp-titulo texto="Opções"></app-temp-titulo>
+
+      <div class="d-flex flex-row gap-1">
+        <div class="d-flex gap-1">
+          <button (click)="onVoltar()" class="btn btn-primary">
+            <i class="bi bi-arrow-90deg-left"></i>
+            <p>Voltar</p>
+          </button>
+        </div>
+
+        <div *ngIf="mostrarOpcoes" class="d-flex gap-1">
+          <button
+            [routerLink]="['/filmes', 'editar', filme._id]"
+            class="btn btn-warning"
+          >
+            <i class="bi bi-pencil-fill"></i>
+            <p>Editar</p>
+          </button>
+        </div>
+      </div>
+      <hr />
+    </section>
+
+    <section>
+
+      <iframe
+        class="video card border-c"
+        [src]="viframe"
+        title="YouTube video player"
+        frameborder="1"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+
+      <div class="link">
+        <a href="{{ filme.link_trailer }}" target="_blank">
+          {{ filme.link_trailer }}
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <app-temp-titulo texto="Titulo"></app-temp-titulo>
+      <span>{{ filme.titulo }}</span>
+    </section>
+    <section>
+      <app-temp-titulo texto="Categorias"></app-temp-titulo>
+      <app-temp-categorias [texto]="filme.categorias"></app-temp-categorias>
+    </section>
+
+    <section>
+      <app-temp-titulo texto="Resenha"></app-temp-titulo>
+      <span class="resenha">{{ filme.resenha }}</span>
+    </section>
+
+    <section>
+      <app-temp-titulo texto="Informacoes"></app-temp-titulo>
+
+      <div class="inf d-flex gap-1">
+        <section>
+          <div class="card border-c d-flex">
+            <img class="imagem" src="{{ filme.link_capa }}" alt="imagem" />
+          </div>
+        </section>
+
+        <section>
+          <div class="campo">
+            <label>Classificação:</label>
+            <span>{{ filme.classificacao }}</span>
+          </div>
+          <div class="campo">
+            <label>duracao:</label>
+            <span>{{ filme.duracao }}</span>
+          </div>
+          <div class="campo">
+            <label>idioma:</label>
+            <span>{{ filme.idioma }}</span>
+          </div>
+          <div class="campo">
+            <label>nacionalidade:</label>
+            <span>{{ filme.nacionalidade }}</span>
+          </div>
+          <div class="campo">
+            <label>legendas:</label>
+            <span>{{ filme.legendas }}</span>
+          </div>
+          <div class="campo">
+            <label>informacao:</label>
+            <span>{{ filme.informacao }}</span>
+          </div>
+          <div class="campo">
+            <label>produtora:</label>
+            <span>{{ filme.produtora }}</span>
+          </div>
+          <div class="campo">
+            <label>formato:</label>
+            <span>{{ filme.formato }}</span>
+          </div>
+          <div class="campo">
+            <label>franquia:</label>
+            <span>{{ filme.franquia }}</span>
+          </div>
+
+          <div class="campo">
+            <label>qualidade:</label>
+            <span>{{ filme.qualidade }}</span>
+          </div>
+          <div class="campo">
+            <label>tamanho:</label>
+            <span>{{ filme.tamanho }}</span>
+          </div>
+          <div class="campo">
+            <label>critica:</label>
+            <span>{{ filme.critica }}</span>
+          </div>
+          <div class="campo">
+            <label>lancamento:</label>
+            <span>{{ filme.lancamento }}</span>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section>
+      <app-temp-titulo texto="Diretor"></app-temp-titulo>
+      <span>{{ filme.diretor }}</span>
+    </section>
+
+    <section>
+      <app-temp-titulo texto="Atores"></app-temp-titulo>
+      <app-temp-atores [texto]="filme.atores"></app-temp-atores>
+    </section>
+
+    <section>
+      <app-temp-titulo texto="link(s) para download"></app-temp-titulo>
+      <app-temp-link [texto]="filme.links"></app-temp-link>
+    </section>
+    <section>
+      <app-temp-titulo texto="Comentario(s)"></app-temp-titulo>
+      <app-filmes-coments></app-filmes-coments>
+    </section>
+  </div>
+</main>

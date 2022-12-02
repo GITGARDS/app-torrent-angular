@@ -1,0 +1,21 @@
+main {
+  margin-bottom: 2px;
+}
+.card {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  transition: all 100ms ease-in-out;
+  align-items: center;
+  gap: 5px;
+}
+
+.card:hover {
+}
+
+img {
+  height: 80px;
+  border-radius: 5px;
+  border: 1px solid black;
+}

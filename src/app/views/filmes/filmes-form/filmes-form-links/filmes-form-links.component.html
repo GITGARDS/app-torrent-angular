@@ -1,0 +1,58 @@
+<main class="card container-fluid">
+  <section class="d-flex flex-column gap-1">
+    <div class="campos d-flex flex-column">
+      <input
+        (focus)="focus_etiqueta = true"
+        (focusout)="focus_etiqueta = false"
+        (input)="oninputetiqueta()"
+        class="ietiqueta"
+        [(ngModel)]="link.etiqueta"
+        class="texto"
+        placeholder="etiqueta"
+        [ngClass]="{ ietiqueta: focus_etiqueta }"
+      />
+      <input
+        (focus)="focus_link = true"
+        (focusout)="focus_link = false"
+        (input)="oninputlink()"
+        class="ilink"
+        [(ngModel)]="link.link"
+        class="texto"
+        placeholder="link"
+        [ngClass]="{ ilink: focus_link }"
+      />
+    </div>
+    <div class="opcoes" [ngClass]="{ iopcoes: etiquetaMudou && linkMudou }">
+      <button (click)="onAdicionar()" class="btn btn-primary">Adicionar</button>
+      <button (click)="onCancelar()" class="btn btn-primary">Cancelar</button>
+    </div>
+  </section>
+
+  <section>
+
+    <ul>
+      <li *ngFor="let item of links; let id = index">
+        <div class="linha">
+          <span class="etiqueta">{{ item.etiqueta }}</span>
+
+        </div>
+
+        <div class="btn-group">
+          <button
+            type="button"
+            class="btn btn-danger dropdown-toggle"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            .
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a (click)="onExcluir(id)" class="dropdown-item">Excluir</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </section>
+</main>

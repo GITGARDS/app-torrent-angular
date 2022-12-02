@@ -1,0 +1,39 @@
+<main>
+  <div class="button-prin">
+    <button
+      class="btn btn-left"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasExample"
+      aria-controls="offcanvasExample"
+    >
+      <i class="bi bi-list"></i>
+    </button>
+  </div>
+
+  <div
+    class="offcanvas offcanvas-start"
+    tabindex="-1"
+    id="offcanvasExample"
+    aria-labelledby="offcanvasExampleLabel"
+  >
+    <div class="offcanvas-header">
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+      <app-header-logo></app-header-logo>
+    </div>
+    <div class="offcanvas-body d-flex flex-column gap-1">
+      <a (click)="onHome()"><span>Home</span></a>
+      <a (click)="onLogin()">
+        <span>Login</span>
+      </a>
+      <a (click)="onFilmes()">
+        <span>Filmes</span>
+      </a>
+    </div>
+  </div>
+</main>

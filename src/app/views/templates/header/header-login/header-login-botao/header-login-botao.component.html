@@ -1,0 +1,37 @@
+<main>
+    <section>
+      <button
+        class="btn btn-light"
+        [ngClass]="{ 'text-bg-success': usuario }"
+        data-bs-toggle="dropdown"
+      >
+        <i class="bi bi-person-circle"></i>
+      </button>
+  
+      <ul class="dropdown-menu">
+        <li *ngIf="!usuario.email">
+          <div class="card text-end">
+            <div class="card-body">
+              <app-header-logo></app-header-logo>
+              <p class="card-text">Torrent dos filmes.</p>
+              <a (click)="onLogin()" class="btn btn-primary">Login</a>
+            </div>
+          </div>
+        </li>
+        <li *ngIf="usuario.email">
+          <div class="card">
+            <img
+              src="../../../../../assets/img/avatar1.png"
+              class="card-img-top"
+              alt="avatar"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ usuario.nome }}</h5>
+              <a (click)="deslogar()" class="btn btn-primary">Deslogar</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+  

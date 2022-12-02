@@ -1,0 +1,7 @@
+.objeto {
+  text-transform: capitalize;
+  margin: 0;
+  padding: 0;
+  font-family: var(--title-ff);
+  font-size: var(--title-fs);
+}

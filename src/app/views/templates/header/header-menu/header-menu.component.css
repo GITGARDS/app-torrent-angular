@@ -1,0 +1,62 @@
+/* --nav-ff: Helvetica;
+--nav-fs: 15px;
+--nav-bc: #f2f2f2;
+--nav-active: #030303;
+--nav-hover: #e5e5e5; */
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5vh;
+  width: 5vh;
+}
+
+.button-prin {
+  height: 100%;
+  width: 100%;
+}
+
+.button-prin button {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  transition: all 100ms ease-in-out;
+  background-color: var(--nav-bc);
+}
+
+.button-prin button:hover {
+  background-color: var(--nav-hover);
+}
+
+.offcanvas {
+  width: 350px;
+}
+
+.offcanvas-header {
+  height: var(--header-h);
+}
+.offcanvas-body a {
+  height: 4vh;
+  font-family: var(--nav-ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--nav-bc);
+}
+
+.offcanvas-body a:hover {
+  background-color: var(--nav-hover);
+}
+.offcanvas-body a span {
+  font-size: var(--nav-fs);
+  display: flex;
+  margin: auto;
+}
+
+@media screen and (max-width: 540px) {
+  .offcanvas {
+    width: 100%;
+  }
+}

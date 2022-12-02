@@ -1,0 +1,46 @@
+main {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  display: flex;
+}
+
+.avatar img {
+  width: 70%;
+  height: 70%;
+  margin: auto;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.body .cab {
+  display: flex;
+  gap: 5px;
+}
+
+.body .cab .nome {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.body .cab .data {
+  font-size: 13px;
+}
+
+.coment textarea{
+  width: 100%;
+  resize: none;  
+  outline: none;
+  padding: 0;
+}

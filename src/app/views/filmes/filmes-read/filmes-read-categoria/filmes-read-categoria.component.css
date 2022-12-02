@@ -1,0 +1,68 @@
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: 10px;
+  height: var(--header-h);
+  width: 100%;
+  border-radius: 0px 0px 10px 10px;
+  border: 1px solid var(--body-c);
+}
+
+.botoes {
+  height: 100%;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.botoes a {
+  border-radius: 50%;
+  color: var(--font-c);
+}
+
+.lista {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.lista ul {
+  height: 100%;
+  display: flex;
+  list-style: none;
+  padding: 15px;
+  gap: 10px;
+}
+
+.lista ul li a {
+  height: 100%;
+  display: flex;
+  gap: 5px;
+  padding: 0 10px;
+  border-radius: 5px;
+  color: var(--font-c);
+}
+
+.lista ul li a i,
+.lista ul li a span {
+  margin: auto;
+  padding: 0;
+  font-size: var(--nav-fs);
+}
+.lista ul li a span {
+  text-transform: capitalize;
+}
+
+.btn {
+  background-color: var(--nav-bc);
+  font-family: var(--nav-ff);
+  font-size: var(--nav-fs);
+  user-select: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--nav-hover);
+}

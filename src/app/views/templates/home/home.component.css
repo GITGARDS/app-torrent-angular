@@ -1,0 +1,35 @@
+main {
+  min-height: var(--main-h);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.conteudo {
+  padding: 10px;
+  min-height: 300px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+.imagem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titulo {
+  text-align: center;
+}
+
+.texto {
+  text-indent: 50px;
+  text-align: justify;
+}

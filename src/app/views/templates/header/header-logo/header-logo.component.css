@@ -1,0 +1,23 @@
+main {
+  display: flex;
+  gap: 5px;
+  padding: 5px;
+}
+
+img {
+  height: 4vh;
+  margin: auto;
+  cursor: pointer;
+}
+
+span {
+  margin: auto;
+  font-family: var(--title-ff);
+  font-size: var(--title-fs);
+  cursor: pointer;
+  transition: color 500ms;
+}
+
+span:hover{
+  color: yellow;
+}

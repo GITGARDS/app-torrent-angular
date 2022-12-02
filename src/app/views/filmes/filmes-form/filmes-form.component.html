@@ -1,0 +1,239 @@
+<main class="container-fluid">
+  <div class="card">
+    <form class="form-horizontal" [formGroup]="formulario">
+      <section>
+        <app-temp-titulo texto="{{ title }}"></app-temp-titulo>
+        <hr />
+      </section>
+
+      <section>
+        <div>
+          <button (click)="sair()" class="btn btn-success">
+            <i class="bi bi-film"></i>
+            <p>Voltar</p>
+          </button>
+        </div>
+        <hr />
+      </section>
+
+      <div class="form-group">
+        <label for="titulo" class="control-label">titulo</label>
+        <input
+          [ngClass]="aplicaCssErro('titulo')"
+          id="titulo"
+          formControlName="titulo"
+          type="text"
+          class="form-control"
+          placeholder="informe o titulo"
+        />
+        <app-campo-control-erro
+          [mostrarErro]="app_campo_control_erro('titulo')"
+          msgErro="Titulo e obrigatorio!"
+        >
+        </app-campo-control-erro>
+      </div>
+
+      <div *ngIf="editar" class="form-group">
+        <label for="classificacao">classificacao</label>
+        <input
+          class="form-control"
+          type="number"
+          formControlName="classificacao"
+          id="classificacao"
+        />
+      </div>
+      <div *ngIf="editar" class="form-group">
+        <label for="duracao">duracao</label>
+        <input
+          class="form-control"
+          type="number"
+          formControlName="duracao"
+          id="duracao"
+        />
+      </div>
+      <div *ngIf="editar" class="form-group">
+        <label for="idioma">idioma</label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="idioma"
+          id="idioma"
+        />
+      </div>
+      <div *ngIf="editar" class="form-group">
+        <label for="nacionalidade">nacionalidade</label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="nacionalidade"
+          id="nacionalidade"
+        />
+      </div>
+      <div *ngIf="editar" class="form-group">
+        <label for="legendas">legendas</label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="legendas"
+          id="legendas"
+        />
+      </div>
+      <div *ngIf="editar" class="form-group">
+        <label for="informacao">informacao</label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="informacao"
+          id="informacao"
+        />
+      </div>
+      <div *ngIf="editar" class="form-group">
+        <label for="produtora">produtora</label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="produtora"
+          id="produtora"
+        />
+      </div>
+      <div *ngIf="editar" class="form-group">
+        <label for="formato">formato</label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="formato"
+          id="formato"
+        />
+      </div>
+      <div *ngIf="editar" class="form-group">
+        <label for="franquia">franquia</label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="franquia"
+          id="franquia"
+        />
+      </div>
+      <div *ngIf="editar" class="form-group">
+        <label for="qualidade">qualidade</label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="qualidade"
+          id="qualidade"
+        />
+      </div>
+      <div *ngIf="editar" class="form-group">
+        <label for="tamanho">tamanho</label>
+        <input
+          class="form-control"
+          type="number"
+          formControlName="tamanho"
+          id="tamanho"
+        />
+      </div>
+      <div *ngIf="editar" class="form-group">
+        <label for="critica">critica</label>
+        <input
+          class="form-control"
+          type="number"
+          formControlName="critica"
+          id="critica"
+        />
+      </div>
+      <div *ngIf="editar" class="form-group">
+        <label for="resenha">resenha</label>
+        <textarea
+          class="form-control"
+          formControlName="resenha"
+          id="resenha"
+          rows="10"
+        ></textarea>
+      </div>
+      <div *ngIf="editar" class="form-group">
+        <label for="diretor">diretor</label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="diretor"
+          id="diretor"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="link_trailer">link_trailer</label>
+        <input
+          [ngClass]="aplicaCssErro('link_trailer')"
+          class="form-control"
+          type="text"
+          formControlName="link_trailer"
+          id="link_trailer"
+        />
+        <app-campo-control-erro
+          [mostrarErro]="app_campo_control_erro('link_trailer')"
+          msgErro="link_trailer e obrigatorio!"
+        >
+        </app-campo-control-erro>
+      </div>
+      <div class="form-group">
+        <label for="link_capa">link_capa</label>
+        <input
+          [ngClass]="aplicaCssErro('link_capa')"
+          class="form-control"
+          type="text"
+          formControlName="link_capa"
+          id="link_capa"
+        />
+        <app-campo-control-erro
+          [mostrarErro]="app_campo_control_erro('link_capa')"
+          msgErro="link_capa e obrigatorio!"
+        >
+        </app-campo-control-erro>
+      </div>
+      <div *ngIf="editar" class="form-group">
+        <label for="lancamento">lancamento</label>
+        <input
+          class="form-control"
+          type="number"
+          formControlName="lancamento"
+          id="lancamento"
+        />
+      </div>
+      <hr />
+
+      <section>
+        <app-temp-titulo texto="categorias"></app-temp-titulo>
+        <app-filmes-form-categorias
+          [categorias]="formulario.controls['categorias'].value"
+        ></app-filmes-form-categorias>
+        <br />
+      </section>
+
+      <section *ngIf="editar">
+        <app-temp-titulo texto="atores"></app-temp-titulo>
+        <app-filmes-form-atores
+          [atores]="formulario.controls['atores'].value"
+        ></app-filmes-form-atores>
+        <br />
+      </section>
+
+      <section *ngIf="editar">
+        <app-temp-titulo texto="links"></app-temp-titulo>
+        <app-filmes-form-links
+          [links]="formulario.controls['links'].value"
+        ></app-filmes-form-links>
+        <br />
+      </section>
+
+      <section *ngIf="formulario.valid">
+        <hr />
+        <div>
+          <button (click)="onSubmit()" class="btn btn-primary">
+            <i class="bi bi-check-all"></i>
+            <p>Salvar</p>
+          </button>
+        </div>
+      </section>
+    </form>
+  </div>
+</main>

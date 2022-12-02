@@ -1,0 +1,45 @@
+import { Observable } from 'rxjs';
+import { EventEmitterService, Usuario, UsuarioService } from "src/app/shared";
+import { Injectable } from "@angular/core";
+
+@Injectable({
+  providedIn: "root",
+})
+export class LogarService {
+  constructor(private usuarioService: UsuarioService) {}
+
+  usuario: Usuario = new Usuario();
+
+  login(par: Usuario): Observable {
+    const res: any = await this.usuarioService.findbyautentica(par).toPromise();
+
+    (result: any) => {
+      if (result) {
+        this.usuario = result;
+      } else {
+        this.usuario = new Usuario();
+      }
+    };
+  }
+
+  setUsuario(v: any) {
+    this.usuario = v;
+    this.setMostrarOpcoes();
+    EventEmitterService.get("ev_usuario").emit(true);
+  }
+  getUsuario() {
+    return this.usuario;
+  }
+
+  setMostrarOpcoes() {
+    EventEmitterService.get("ev_mostraopcoes").emit(this.getMostrarOpcoes());
+  }
+
+  getMostrarOpcoes() {
+    let usuario: Usuario = this.getUsuario()!;
+    if (usuario && usuario.tipo === 1) {
+      return true;
+    }
+    return false;
+  }
+}

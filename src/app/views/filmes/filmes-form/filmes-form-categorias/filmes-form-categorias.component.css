@@ -1,0 +1,46 @@
+main {
+  width: 100%;
+  display: flex;
+  padding: 5px;
+  flex-direction: column;
+
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+ul li {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+}
+
+ul li .linha {
+  display: flex;
+}
+
+ul li .linha .categoria {
+  font-weight: bold;
+  margin: auto;
+}
+
+ul li .btn-group {
+  display: none;
+}
+
+ul li:hover {
+  /* border-color: blue; */
+}
+ul li:hover .btn-group {
+  display: flex;
+}
+
+.btn-opcoes{
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+}

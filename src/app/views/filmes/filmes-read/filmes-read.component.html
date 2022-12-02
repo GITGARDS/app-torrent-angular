@@ -1,0 +1,60 @@
+<main>
+  <section>
+    <app-filmes-read-categoria
+      (retorno)="retornoCategoria($event)"
+    ></app-filmes-read-categoria>
+  </section>
+
+  <section>
+    <app-filmes-search></app-filmes-search>
+  </section>
+
+  <section>
+    <app-temp-titulo
+      texto="Categoria: {{ categoria_titulo }} / Registros: {{ totalItems }}"
+    ></app-temp-titulo>
+  </section>
+
+  <section>
+    <div class="spinner" *ngIf="carregando">
+      <span class="spinner-border"></span>
+    </div>
+
+    <ul *ngIf="filmes$ | async as filmes">
+      <li *ngIf="mostrarOpcoes" class="filme_novo">
+        <button
+          class="btn btn-warning"
+          [ngClass]="{ card_filme_mudar: mudar }"
+          (click)="onNovo()"
+        >
+          <i class="bi bi-node-plus-fill"></i>
+          <p>Novo</p>
+        </button>
+      </li>
+      <li
+        class="card-filme"
+        [ngClass]="{ card_filme_mudar: mudar }"
+        *ngFor="let filme of filmes"
+      >
+        <app-filmes-read-categoria-card
+          [filme]="filme"
+        ></app-filmes-read-categoria-card>
+      </li>
+    </ul>
+
+    <section class="pagination">
+      <pagination
+        [boundaryLinks]="showBoundaryLinks"
+        [totalItems]="totalItems"
+        [align]="true"
+        [(ngModel)]="currentPage"
+        (pageChanged)="pageChanged($event)"
+        [itemsPerPage]="itemsPerPage"
+        pageBtnClass="btn btn-success"
+        class="pull-left"
+        previousText="&laquo;"
+        nextText="&raquo;"
+      ></pagination>
+    </section>
+  </section>
+</main>

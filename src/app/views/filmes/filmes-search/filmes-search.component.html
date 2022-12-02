@@ -1,0 +1,26 @@
+<main>
+  <form class="d-flex" role="search">
+    <input
+      class="form-control"
+      type="search"
+      placeholder="Procurar"
+      aria-label="Search"
+      [formControl]="queryField"
+      (input)="onInput()"
+    />
+    <!-- <button (click)="onSearch()" class="btn btn-success">Search</button> -->
+  </form>
+
+  <section *ngIf="mudou">
+    <div class="lista" *ngIf="results$ | async as lista">
+      <ul>
+        <li *ngFor="let filme of lista">
+          <app-filmes-search-card
+            [filme]="filme"
+            (clicou)="card_search_ret()"
+          ></app-filmes-search-card>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>

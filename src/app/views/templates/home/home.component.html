@@ -1,0 +1,52 @@
+<main>
+  <div class="card text-bg-secondary conteudo">
+    <section class="titulo">
+      <app-temp-titulo
+        texto="5 Melhores Frases do Filme Gladiador"
+      ></app-temp-titulo>
+    </section>
+
+    <section class="inputs">
+      <ul>
+        <li>
+          <small class="texto">
+            "O que fazemos na vida ecoa na eternidade; A vida é mais simples
+            para um soldado."
+          </small>
+        </li>
+        <li>
+          <small class="texto">
+            "Ambição. Pode ser uma virtude quando nos motiva a vencer."
+          </small>
+        </li>
+        <li>
+          <small class="texto">
+            "À morte sorri para todos nós; o que um homem pode fazer é sorrir de
+            volta."
+          </small>
+        </li>
+        <li>
+          <small class="texto">
+            "O que quer que saia desses portões, temos uma chance maior de
+            sobreviver se trabalharmos juntos."
+          </small>
+        </li>
+        <li>
+          <small class="texto">
+            "A raposa vê o pequeno príncipe quando olha com o coração. Se
+            conseguir fazer isso, nunca mais vai se sentir só."
+          </small>
+        </li>
+      </ul>
+    </section>
+
+    <section class="botoes">
+      <div class="d-flex gap-3">
+        <button (click)="onFilmes()" class="btn btn-primary">
+          Ir aos filmes
+        </button>
+        <button (click)="onLogin()" class="btn btn-success">Login</button>
+      </div>
+    </section>
+  </div>
+</main>

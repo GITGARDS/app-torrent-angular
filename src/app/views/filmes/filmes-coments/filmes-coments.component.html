@@ -1,0 +1,56 @@
+<main class="card border-c">
+  <section class="d-flex flex-column gap-1">
+    <div class="campos d-flex flex-column">
+
+      <textarea
+        (focus)="focus_coment = true"
+        (focusout)="focus_coment = false"
+        (input)="oninputcoment()"
+        [(ngModel)]="coment.comentario"
+        type="text"
+        placeholder="Adicione um comentario..."
+        class="ctextarea"
+        [ngClass]="{ icoment: focus_coment }"
+        rows="3"
+      ></textarea>
+      <input
+        (focus)="focus_nome = true"
+        (focusout)="focus_nome = false"
+        (input)="oninputnome()"
+        class="inome"
+        [(ngModel)]="coment.nome"
+        class="texto"
+        placeholder="nome"
+        [ngClass]="{ inome: focus_nome }"
+      />
+      <input
+        (focus)="focus_email = true"
+        (focusout)="focus_email = false"
+        (input)="oninputemail()"
+        class="iemail"
+        [(ngModel)]="coment.email"
+        class="texto"
+        placeholder="email"
+        [ngClass]="{ iemail: focus_email }"
+      />
+    </div>
+    <div
+      class="opcoes"
+      [ngClass]="{ iopcoes: comentMudou && nomeMudou && emailMudou }"
+    >
+      <button (click)="onComentar()" class="btn btn-primary">Comentar</button>
+      <button (click)="onCancelar()" class="btn btn-primary">Cancelar</button>
+    </div>
+  </section>
+  <section>
+    <ul *ngIf="coments$ | async as coments; else loading_coment">
+      <li *ngFor="let item of coments">
+        <app-temp-coments [coment]="item"></app-temp-coments>
+      </li>
+    </ul>
+
+    <ng-template #loading_coment>
+      <div class="spinner-border"></div>
+    </ng-template>
+  </section>
+</main>

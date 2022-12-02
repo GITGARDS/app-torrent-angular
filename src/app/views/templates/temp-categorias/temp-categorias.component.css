@@ -1,0 +1,24 @@
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+
+li .objeto {
+  display: flex;
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
+li .objeto:hover{
+  color: blue;
+}

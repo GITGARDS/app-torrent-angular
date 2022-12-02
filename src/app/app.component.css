@@ -1,0 +1,16 @@
+main {
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  min-height: var(--header-h);
+  padding: 0;
+}
+.rota {
+  min-height: var(--main-h);
+  padding: 0;
+}
+.footer {
+  min-height: var(--footer-h);
+  padding: 0;
+}

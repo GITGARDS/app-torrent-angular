@@ -1,0 +1,47 @@
+<main>
+  <div class="conteudo">
+    <section class="imagem">
+      <i class="bi bi-archive-fill"></i>
+    </section>
+
+    <section class="titulo">
+      <app-temp-titulo texto="Registrar"></app-temp-titulo>
+    </section>
+
+    <section class="inputs">
+      <input
+        [(ngModel)]="usuario.nome"
+        class="inome form-control"
+        type="text"
+        id="nome"
+        name="nome"
+        placeholder="nome"
+        required
+      />
+      <input
+        [(ngModel)]="usuario.email"
+        class="form-control"
+        type="text"
+        id="email"
+        name="email"
+        placeholder="email"
+        required
+      />
+      <input
+        [(ngModel)]="usuario.senha"
+        class="isenha form-control"
+        type="text"
+        id="senha"
+        name="senha"
+        placeholder="senha"
+        required
+      />
+    </section>
+
+    <section class="botoes">
+      <button (click)="gravar()" class="btn btn-primary">Gravar</button>
+
+      <button (click)="cancelar()" class="btn btn-danger">Cancelar</button>
+    </section>
+  </div>
+</main>

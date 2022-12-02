@@ -1,0 +1,41 @@
+main {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  min-height: var(--main-h);
+}
+
+.rota {
+  width: 60%;
+  min-height: var(--main-h);
+  transition: all 300ms ease-in-out;
+  display: none;
+}
+
+.filmes {
+  width: 100%;
+  min-height: var(--main-h);
+  transition: all 300ms ease-in-out;
+}
+
+.mudar_tela_de_rotas{
+  display: flex;
+}
+
+.mudar_tela_de_filmes{
+  width: 40%;
+}
+
+@media screen and (max-width: 1200px) {
+  main {
+    flex-direction: column;
+  }
+
+  .rota {
+    width: 100%;
+  }
+
+  .filmes {
+    width: 100%;
+  }
+}

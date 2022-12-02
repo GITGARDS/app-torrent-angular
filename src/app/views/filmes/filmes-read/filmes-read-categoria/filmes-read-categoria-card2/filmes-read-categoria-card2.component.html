@@ -1,0 +1,96 @@
+<div class="card">
+  <div class="imagem">
+    <img src="{{ filme.link_capa }}" alt="..." />
+  </div>
+
+  <div class="card-body">
+    <p class="titulo">{{ filme.titulo }}</p>
+
+    <div class="info">
+      <div class="info-ico">
+        <label>classificacao:</label>
+        <p>{{ filme.classificacao }}</p>
+      </div>
+
+      <div class="info-ico">
+        <label>duracao:</label>
+        <p>{{ filme.duracao }}</p>
+      </div>
+      <div class="info-ico">
+        <label>idioma:</label>
+        <p>{{ filme.idioma }}</p>
+      </div>
+      <div class="info-ico">
+        <label>nacionalidade:</label>
+        <p>
+          {{ filme.nacionalidade }}
+        </p>
+      </div>
+      <div class="info-ico">
+        <label>legendas:</label>
+        <p>{{ filme.legendas }}</p>
+      </div>
+      <div class="info-ico">
+        <label>informacao:</label>
+        <p>{{ filme.informacao }}</p>
+      </div>
+      <div class="info-ico">
+        <label>formato:</label>
+        <p>{{ filme.formato }}</p>
+      </div>
+      <div class="info-ico">
+        <label>franquia</label>
+        <p>{{ filme.franquia }}</p>
+      </div>
+      <div class="info-ico">
+        <label>qualidade</label>
+        <p>{{ filme.qualidade }}</p>
+      </div>
+      <div class="info-ico">
+        <label>tamanho:</label>
+        <p>{{ filme.tamanho }}</p>
+      </div>
+
+      <div class="info-ico">
+        <label>critica:</label>
+        <p>{{ filme.critica }}</p>
+      </div>
+    </div>
+
+    <div class="info">
+      <div class="info-ico">
+        <i class="bi bi-bar-chart-steps"></i>
+        <div *ngFor="let item of filme.categorias">
+          <p>
+            {{ item.nome }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- export class Filme {
+  public _id: string | undefined;
+  public legendas: string | undefined;
+  public informacao: string | undefined;
+  public produtora: string | undefined;
+  public formato: string | undefined;
+  public franquia: string | undefined;
+  public qualidade: string | undefined;
+  public tamanho: number | undefined;
+  public critica: number | undefined;
+  public resenha: string | undefined;
+  public diretor: string | undefined;
+  public link_trailer: string | undefined;
+  public link_capa: string | undefined;
+
+  public categorias: Categoria[] = [];
+  public atores: Filme_Atores[] = [];
+  public links: Filme_Links[] = [];
+
+  public lancamento: number | undefined;
+  public downloads: number | undefined;
+  public data_cad: string | undefined;
+  public __v: number | undefined;
+} -->

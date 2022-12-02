@@ -1,0 +1,42 @@
+<main class="card container-fluid">
+  <section>
+    <div *ngIf="categoria$ | async as categorias" class="d-flex gap-1">
+      <label for="categoria">Categoria</label>
+      <select
+        id="categoria"
+        required
+        [(ngModel)]="categoria"
+        (change)="onChange()"
+      >
+        <option *ngFor="let item of categorias" [ngValue]="item">
+          {{ item.nome }}
+        </option>
+      </select>
+    </div>
+  </section>
+
+  <section>
+    <ul>
+      <li *ngFor="let item of categorias; let id = index">
+        <div class="linha">
+          <span class="nome">{{ item.nome }}</span>
+        </div>
+
+        <div class="btn-group">
+          <button
+            type="button"
+            class="btn-opcoes btn btn-light"
+            data-bs-toggle="dropdown"
+          >
+          ...
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a (click)="onExcluir(id)" class="dropdown-item">Excluir</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </section>
+</main>

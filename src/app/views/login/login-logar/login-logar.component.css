@@ -1,0 +1,53 @@
+main {
+  min-height: var(--main-h);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.conteudo {
+  padding: 10px;
+  min-height: 400px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+.imagem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagem i {
+  font-size: 70px;
+  text-shadow: 1px 1px 2px black;
+}
+
+.titulo {
+  text-align: center;
+}
+
+input {
+  margin: 0;
+  padding: 10px;
+  outline: none;
+  border-radius: 0;
+}
+
+.iemail {
+  border-radius: 10px 10px 0px 0px;
+}
+.isenha {
+  border-radius: 0px 0px 10px 10px;
+}
+
+.botoes {
+  gap: 3px;
+}

@@ -1,0 +1,50 @@
+main {
+  padding: 10px;
+
+}
+
+.spinner-border span {
+  font-size: 30px;
+  padding: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.texto {
+  outline: none;
+  transition: all 200ms ease-in;
+}
+
+.ctextarea {
+  width: 100%;
+  resize: none;
+  outline: none;
+  padding: 0;
+}
+
+.icoment {
+  border-bottom: medium solid blue;
+}
+.inome {
+  border-bottom: medium solid blue;
+}
+.iemail {
+  border-bottom: medium solid blue;
+}
+
+.opcoes {
+  opacity: 0.5;
+  display: flex;
+  gap: 5px;
+  justify-content: right;
+}
+
+.iopcoes {
+  opacity: 1;
+}

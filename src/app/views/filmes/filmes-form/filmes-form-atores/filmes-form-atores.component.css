@@ -1,0 +1,71 @@
+main {
+  width: 100%;
+  display: flex;
+  padding: 5px;
+  flex-direction: column;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+ul li {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+}
+
+ul li .linha {
+  display: flex;
+  gap: 10px;
+}
+
+ul li .linha .nome {
+  font-weight: bold;
+  margin: auto;
+}
+
+ul li .linha .personagem {
+  margin: auto;
+}
+
+ul li .btn-group {
+  display: none;
+}
+
+ul li:hover {
+  border-color: blue;
+
+}
+ul li:hover .btn-group {
+  display: flex;
+}
+
+ul li .btn-group button {
+  border-radius: 0;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid blue;
+  outline: none;
+  transition: all 200ms ease-in;
+}
+
+.inome {
+  border-bottom: medium solid blue;
+}
+.ipersonagem {
+  border-bottom: medium solid blue;
+}
+
+.opcoes {
+  opacity: 0.5;
+  display: flex;
+  gap: 5px;
+  justify-content: right;
+}
+
+.iopcoes {
+  opacity: 1;
+}

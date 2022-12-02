@@ -1,0 +1,51 @@
+main {
+  border: none;
+  border-radius: 0;
+  padding: 5px;
+  min-width: 300px;  
+}
+
+.card{
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: var(--nav-bc);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.campo {
+  display: flex;
+  font-size: 15px;
+  gap: 5px;
+}
+
+.campo label {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.resenha {
+  text-align: justify;
+  text-indent: 50px;
+}
+
+.link {
+  font-size: 15px;
+}
+
+iframe {
+  width: 100%;
+  height: 500px;
+  border: none;
+}
+
+@media screen and (max-width: 770px) {
+  .inf {
+    flex-direction: column;
+  }
+}

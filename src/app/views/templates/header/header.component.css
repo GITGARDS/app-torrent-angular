@@ -1,0 +1,28 @@
+main {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: var(--font-c);
+}
+
+.left {
+  display: flex;
+  width: 40%;
+  align-items: center;
+  padding: 2px 5px;
+  transition: all 100ms ease-in-out;
+}
+
+.center {
+  width: 20%;
+  transition: all 100ms ease-in-out;
+}
+
+.right {
+  width: 40%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  transition: all 100ms ease-in-out;
+  padding: 5px;
+}

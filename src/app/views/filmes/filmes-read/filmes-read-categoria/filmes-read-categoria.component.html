@@ -1,0 +1,38 @@
+<main>
+  <section class="botoes">
+    <a (click)="onClickLeft()" class="btn">
+      <i class="bi bi-chevron-left"></i>
+    </a>
+  </section>
+
+  <section #listaScrool class="lista">
+    <ul *ngIf="categorias; else loading">
+      <li *ngIf="mostrarOpcoes" [routerLink]="['/categorias', 'read']"  >
+        <a class="btn bg-warning">
+          <i class="bi bi-collection-fill"></i>
+          <span> Categorias </span>
+        </a>
+      </li>
+
+      <li
+        (click)="onCategoriaClick(item, ind)"
+        *ngFor="let item of categorias; let ind = index"
+      >
+        <a class="btn" #citem>
+          <i class="{{ item.icone }}"></i>
+          <span> {{ item.nome }} </span>
+        </a>
+      </li>
+    </ul>
+
+    <ng-template #loading>
+      <span>aguarde...</span>
+    </ng-template>
+  </section>
+
+  <section class="botoes">
+    <a (click)="onClickRight()" class="btn">
+      <i class="bi bi-chevron-right"></i>
+    </a>
+  </section>
+</main>

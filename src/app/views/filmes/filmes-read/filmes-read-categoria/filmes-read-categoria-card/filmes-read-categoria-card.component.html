@@ -1,0 +1,20 @@
+<main *ngIf="filme">
+  <div class="card" (click)="onClick(filme._id)">
+    <div class="card-imagem">
+      <img src="{{ filme.link_capa }}" alt="..." />
+    </div>
+
+    <div class="card-body">
+      <div class="card-title">
+        <app-temp-titulo texto="{{ filme.titulo }}" fs="18px"></app-temp-titulo>
+      </div>
+
+      <div class="card-text">
+        <app-temp-titulo
+          texto="{{ filme.lancamento }}"
+          fs="20px"
+        ></app-temp-titulo>
+      </div>
+    </div>
+  </div>
+</main>

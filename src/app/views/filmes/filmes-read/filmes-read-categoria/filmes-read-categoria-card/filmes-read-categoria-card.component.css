@@ -1,0 +1,46 @@
+main {
+  height: 400px;
+}
+
+.card {
+  height: 100%;
+  cursor: pointer;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: .2s;
+  border-width: 3px;
+}
+
+.card:hover {
+  border-color: dodgerblue;
+}
+
+
+.card-imagem {
+  height: 300px;
+  overflow: hidden;
+}
+
+.card-imagem img {
+  height: 100%;
+  width: 100%;
+  transition: 200ms;
+}
+
+.card-body {
+  height: 80px;
+}
+.card-body .card-title {
+  overflow: hidden;
+}
+
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90px;
+}

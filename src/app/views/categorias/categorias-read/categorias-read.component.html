@@ -1,0 +1,56 @@
+<main>
+  <div class="card container">
+    <section>
+      <div class="display-4">Categorias</div>
+    </section>
+    <hr />
+
+    <section>
+      <button [routerLink]="['/categorias', 'novo']" class="btn btn-warning">
+        <i class="bi bi-node-plus-fill"></i>
+        <p>Novo</p>
+      </button>
+    </section>
+
+    <hr />
+
+    <div
+      class="lista d-flex flex-wrap"
+      *ngIf="categorias$ | async as categorias; else loading"
+    >
+      <section class="container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">nome</th>
+              <th scope="col">icone</th>
+              <th scope="col">opcoes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of categorias">
+              <td>{{ item._id }}</td>
+              <td>{{ item.nome }}</td>
+              <td><i class="{{ item.icone }}"></i></td>
+              <td>
+                <button (click)="onEditar(item._id)" class="btn btn-primary">
+                  Alterar
+                </button>
+              </td>
+              <td>
+                <button (click)="onExcluir(item)" class="btn btn-danger">
+                  Excluir
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+    <ng-template #loading>
+      <div class="spinner-border"></div>
+    </ng-template>
+  </div>
+</main>

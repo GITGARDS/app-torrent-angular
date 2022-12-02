@@ -1,0 +1,9 @@
+<main class="container">
+  <section class="rota" [ngClass]="{ mudar_tela_de_rotas: mudar_tela }">
+    <router-outlet></router-outlet>
+  </section>
+
+  <section class="filmes" [ngClass]="{ mudar_tela_de_filmes: mudar_tela }">
+    <app-filmes-read></app-filmes-read>
+  </section>
+</main>
